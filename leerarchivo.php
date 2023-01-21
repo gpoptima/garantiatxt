@@ -6,8 +6,8 @@ $conn = new mysqli("127.0.0.1", "kiatxt", "pYBD23p9MIT*", "kiatxt");
 
 
 $ruta[0] = "./10044/";
-$ruta[1] = "./10063/";
-$ruta[2] = "./10160/";
+//$ruta[1] = "./10063/";
+//$ruta[2] = "./10160/";
 
 for($i=0; $i <count($ruta); $i++){
 
