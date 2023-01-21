@@ -1,7 +1,7 @@
 <?php
 
 //$conn = new mysqli("localhost", "root", "", "kiatxt");
-$conn = new mysqli("127.0.0.1", "dguzman", "", "kiatxt");
+$conn = new mysqli("127.0.0.1", "kiatxt", "pYBD23p9MIT*", "kiatxt");
 //$listar = "100442011120222200.txt";
 
 
