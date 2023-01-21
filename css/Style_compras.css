@@ -1,0 +1,191 @@
+.nombre_modulo{
+     background-color: #02b1e4;
+     font-size: 50px;
+     color: #fff;	
+     align-items: center;
+     display: flex;
+     justify-content: center;
+     font-family: serif;
+height: 80px;
+}
+
+.contenedor_hijo{
+     padding: 20px 0;
+}
+.contenedor_buscar{
+     font-family: serif;
+}
+.contenedor_buscar h4{
+     font-size: 30px;
+     font-family: sans-serif;
+}
+.cod_producto{
+     border: 1.5px black solid;
+     font-size: 25.3px;
+     border-radius: 20px;
+     outline: none;
+     width: 230px;
+     height: 40px;
+     padding-left: 4px;
+     background-color: #f1f2f6;
+     -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+     -ms-border-radius: 20px;
+     -o-border-radius: 20px;
+}
+.btn_buscar{
+     border: 0px solid black;
+     outline: none;
+     width: 110px;
+     align-items: center;
+     height: 40px;
+     border-radius: 10px;
+     color: #000;
+     font-size: 25.5px;
+     cursor: pointer;
+     background-color: #D1D1D1;
+     -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+     -ms-border-radius: 10px;
+     -o-border-radius: 10px;
+}
+.contenedor_datagrit{
+     margin-top: 20px;
+     width: 70%;
+     height: 400px;
+     overflow-y: scroll;
+     overflow-x: scroll;
+     background-color: #f1f2f6;
+}
+.desplasatron{
+     display: flex;
+}
+.menu_de_opciones_de_pago{
+    
+    
+     background-color: #02b1e4;
+     overflow-y: scroll;
+    
+     
+     height: 400px;
+     width: 455px;
+     margin-top: 20px;
+     margin-left: 20px;
+}
+.contenedor_radio{
+     margin-top: 290px;
+   
+     margin-left: 20px;
+     background: #02b1e4;
+     transition: background 1s;
+     -webkit-transition: background 1s;
+     -moz-transition: background 1s;
+     -ms-transition: background 1s;
+     -o-transition: background 1s;
+}
+
+.lbl_menu{
+     background-color: #234;
+}
+.lbl_menu label{
+     display: inline-block;
+     padding: 20px;
+     color: #fff;
+     
+     transition: all 400ms ease;
+     -webkit-transition: all 400ms ease;
+     -moz-transition: all 400ms ease;
+     -ms-transition: all 400ms ease;
+     -o-transition: all 400ms ease;
+}
+
+.conten_radio_option{
+     position: relative;
+}
+.conten_radio_option .contenedor_efectivo{
+     padding: 10px 20px;
+     position: absolute;
+     line-height: 1.8;
+     transition: all 600ms ease;
+     
+     
+     padding-bottom: 40px;
+     -webkit-transition: all 600ms ease;
+     -moz-transition: all 600ms ease;
+     -ms-transition: all 600ms ease;
+     -o-transition: all 600ms ease;
+}
+
+
+
+
+
+.contenedor_efectivo{
+     font-size: 28px;
+}
+.txt_Efectivo{
+     font-size: 28px;
+     border: 3px black solid;
+     border-radius: 13px;
+     -webkit-border-radius: 13px;
+     -moz-border-radius: 13px;
+     -ms-border-radius: 13px;
+     -o-border-radius: 13px;
+     padding-left: 5px;
+}
+.Total_efectivo{
+     font-size: 30px;     
+}
+.btn_Pagar_efectivo{
+     font-size: 40px;
+     width: 100%;
+     border: 0px solid;
+     border-radius: 9px;
+     display: inline-block;
+     padding: 13px;
+     background-color: blue;
+     outline: none;
+     color: #fff;
+     cursor: pointer;
+     -webkit-border-radius: 9px;
+     -moz-border-radius: 9px;
+     -ms-border-radius: 9px;
+     -o-border-radius: 9px;
+}
+.pagar_efectivo{
+     margin-top: 30px;
+}
+.contenedor_hijo ::-webkit-scrollbar{
+     display: none;
+
+}
+.contenedor_hijo{
+
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+
+     
+}
+
+.menu_de_opciones_de_pago ::-webkit-scrollbar{
+     display: none;
+
+}
+.menu_de_opciones_de_pago{
+
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+
+     
+}
+.contenedor_datagrit ::-webkit-scrollbar{
+     display: none;
+
+}
+.contenedor_datagrit{
+
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+
+     
+}
