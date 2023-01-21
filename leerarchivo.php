@@ -71,7 +71,7 @@ while($elementos = readdir($directorio)) {
 
                 list($var1, $var2, $var3, $var4, $var5, $var6, $var7, $var8, $var9, $var10, $var11, $var12, $var13, $var14) = $carray2;
                 var_dump($var1, $var2, $var3, $var4, $var5, $var6, $var7, $var8, $var9, $var10, $var11, $var12, $var13, $var14);
-                $sql = "INSERT INTO C2(email,var2,var3,var4,var5,var6,var7,var8,var9,var10,var11,var12,var13,var14) VALUES ('$var8','$var2','$var3','$var4','$var5','$var6','$var7','$var8','$var9','$var10','$var11','$var12','$var13','$var14' )";
+                $sql = "INSERT INTO c2(email,var2,var3,var4,var5,var6,var7,var8,var9,var10,var11,var12,var13,var14) VALUES ('$var8','$var2','$var3','$var4','$var5','$var6','$var7','$var8','$var9','$var10','$var11','$var12','$var13','$var14' )";
                 $conn->query($sql);
                 $email= $var8;
 
@@ -80,7 +80,7 @@ while($elementos = readdir($directorio)) {
 
                 list($var1, $var2, $var3, $vin, $var5, $var6, $var7, $var8, $var9, $var10, $var11, $var12, $var13) = $carray2;
                 var_dump($var1, $var2, $var3, $vin, $var5, $var6, $var7, $var8, $var9, $var10, $var11, $var12, $var13);
-                $sql = "INSERT INTO D3(email,var2,var3,vin,var5,var6,var7,var8,var9,var10,var11,var12,var13) VALUES ('$email','$var2','$var3','$vin','$var5','$var6','$var7','$var8','$var9','$var10','$var11','$var12','$var13')";
+                $sql = "INSERT INTO d3(email,var2,var3,vin,var5,var6,var7,var8,var9,var10,var11,var12,var13) VALUES ('$email','$var2','$var3','$vin','$var5','$var6','$var7','$var8','$var9','$var10','$var11','$var12','$var13')";
                 $conn->query($sql);
 
 
@@ -90,7 +90,7 @@ while($elementos = readdir($directorio)) {
             if ($letra2 == "E4") {
                 list($var1, $var2, $var3, $var4, $var5, $var6, $var7, $var8, $var9, $var10) = $carray2;
                 var_dump($var1, $var2, $var3, $var4, $var5, $var6, $var7, $var8, $var9, $var10);
-                $sql = "INSERT INTO E4(email,var2,var3,var4,var5,var6,var7,var8,var9,var10) VALUES ('$email','$var2','$var3','$var4','$var5','$var6','$var7','$var8','$var9','$var10')";
+                $sql = "INSERT INTO e4(email,var2,var3,var4,var5,var6,var7,var8,var9,var10) VALUES ('$email','$var2','$var3','$var4','$var5','$var6','$var7','$var8','$var9','$var10')";
                 $conn->query($sql);
 
             }
@@ -98,7 +98,7 @@ while($elementos = readdir($directorio)) {
             if ($letra2 == "F5") {
                 list($var1, $var2, $var3, $var4, $var5, $var6, $var7, $var8, $var9) = $carray2;
                 var_dump($var1, $var2, $var3, $var4, $var5, $var6, $var7, $var8, $var9);
-                $sql = "INSERT INTO F5(email,var2,var3,var4,var5,var6,var7,var8,var9) VALUES ('$email','$var2','$var3','$var4','$var5','$var6','$var7','$var8','$var9')";
+                $sql = "INSERT INTO f5(email,var2,var3,var4,var5,var6,var7,var8,var9) VALUES ('$email','$var2','$var3','$var4','$var5','$var6','$var7','$var8','$var9')";
                 $conn->query($sql);
 
             }
@@ -106,7 +106,7 @@ while($elementos = readdir($directorio)) {
             if ($letra2 == "G6") {
                 list($var1, $var2, $var3, $var4, $var5, $var6) = $carray2;
                 var_dump($var1, $var2, $var3, $var4, $var5, $var6);
-                $sql = "INSERT INTO G6(email,var2,var3,var4,var5,var6) VALUES ('$email','$var2','$var3','$var4','$var5','$var6')";
+                $sql = "INSERT INTO g6(email,var2,var3,var4,var5,var6) VALUES ('$email','$var2','$var3','$var4','$var5','$var6')";
                 $conn->query($sql);
 
             }
@@ -114,7 +114,7 @@ while($elementos = readdir($directorio)) {
             if ($letra2 == "H7") {
                 list($var1, $var2, $var3, $var4, $var5, $var6, $var7, $var8, $var9) = $carray2;
                 var_dump($var1, $var2, $var3, $var4, $var5, $var6, $var7, $var8, $var9);
-                $sql = "INSERT INTO H7(email,var2,var3,var4,var5,var6,var7,var8,var9) VALUES ('$email','$var2','$var3','$var4','$var5','$var6','$var7','$var8','$var9')";
+                $sql = "INSERT INTO h7(email,var2,var3,var4,var5,var6,var7,var8,var9) VALUES ('$email','$var2','$var3','$var4','$var5','$var6','$var7','$var8','$var9')";
                 $conn->query($sql);
                 $sql = "INSERT INTO a0(email,letra, codigo, sucursal) VALUES ('$email','$letra2', '$codigo2','$sucursal2')";
                 $conn->query($sql);
