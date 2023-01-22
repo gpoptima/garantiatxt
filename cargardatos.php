@@ -1,148 +1,109 @@
-<!DOCTYPE html>
+<?php
+	
+	require 'conexion.php';
+	
+	//$sql = "SELECT id, nombre, telefono, fecha_nacimiento, estado_civil FROM empleados WHERE activo=1";
+	
+	$sql = "SELECT id, email,var2,var3,var4,var5,var6,var7,var8,var9,var10,var11,var12,var13,var14 FROM  c2";
+	$resultado = $conexion->query($sql);
+	//$resultado = $conn->query($sql);
+
+
+//echo $resultado;	
+?>
+
+<!doctype html>
 <html lang="es">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Bootstrap CSS -->
+		 <link rel="stylesheet" href="css/bootstrap.min.css">
+		<!--  <link rel="stylesheet" href="css/jquery.dataTables.css">
+		 -->
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"> -->
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Buscar Clientes">
-    <meta name="author" content="Wilfrido Guzman">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busquedad de Clientes</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-</head>
-
-<body>
-    <main>
-        <div class="container py-4 text-center">
-            <h2>Busqueda de Clientes</h2>
-
-            <div class="row g-4">
-
-                <div class="col-auto">
-                    <label for="num_registros" class="col-form-label">Mostrar: </label>
-                </div>
-
-                <div class="col-auto">
-                    <select name="num_registros" id="num_registros" class="form-select">
-                        <option value="10">10</option>
-                        <option value="25">25</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                    </select>
-                </div>
-
-                <div class="col-auto">
-                    <label for="num_registros" class="col-form-label">registros </label>
-                </div>
-
-                <div class="col-5"></div>
-
-                <div class="col-auto">
-                    <label for="campo" class="col-form-label">Buscar: </label>
-                </div>
-                <div class="col-auto">
-                    <input type="text" name="campo" id="campo" class="form-control">
-                </div>
-            </div>
-
-            <div class="row py-4">
-                <div class="col">
-                    <table class="table table-sm table-bordered">
-                        <thead>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<!-- <script src="js/jquery-3.6.0.min.js" ></script>
+		<script src="js/bootstrap.min.js" ></script>
+		<script src="js/jquery.dataTables.min.js" ></script> -->
+		
+		 <script src="https://code.jquery.com/jquery-3.5.1.js" ></script> 
+		<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" ></script>
+		<!-- <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bulmas.min.js" ></script> -->
+		
+		
+		<title>Relacion de Productos</title>
+		
+		<script>
+			$(document).ready(function() {
+			$('#tabla').DataTable();
+			} );
+			
+		</script>
+		
+		<style>
+			body {
+			background: white;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<h1>Relacion de Productos</h1>
+			</div>
+			
+			<!-- <table id="example" class="table is-striped" style="width:100%"> -->
+		
+			<table id="tabla" class="dtable is-striped" style="width:100%">
+				<thead>
+					<tr>
+					 
                             <th>Nombre</th>
                             <th>E-mail</th>
-                            <th>Calle</th>
                             <th>Direcion</th>
                             <th>C.P.</th>
                             <th>Telefono</th>
-                            <th >Var5</th>
-                            <th></th>
-                            <th></th>
-                        </thead>
+                           
+                            												
+						<th></th>
+					
+					</tr>
+				</thead>
+				<tbody>
+					<?php while($fila = $resultado->fetch_assoc()) { ?>
+						<tr>
+						
+					    	
+						    <td><?php echo $fila['var11']." ". $fila['var12']." ". $fila['var13'];?></td>
+					    	<td><?php echo $fila['email'];?></td>
+							<td><?php echo $fila['var2']." ". $fila['var3']." ". $fila['var7']; ?></td>
+							
+							<td><?php echo $fila['var4']; ?></td>
+							<td><?php echo $fila['var9']; ?></td>
+							
+							
+							
 
-                        <!-- El id del cuerpo de la tabla. -->
-                        <tbody id="content">
-
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-6">
-                    <label id="lbl-total"></label>
-                </div>
-
-                <div class="col-6" id="nav-paginacion"></div>
-            </div>
-        </div>
-
-       <!--  <div id="modal"><h1>hola soy modal</h1></div> -->
-    </main>
-
-    <script>
-
-        // const modal = document.getElementById('modal')
-        // let open
-        // function modalValue(id) {
-        //     if(!open){
-        //         open = true
-        //         modal.style.display = 'none'
-        //     } else {
-        //       open = false
-        //       modal.style.display = 'block'
-        //     }
-        
-        //     console.log(id)
-        // }
-        let paginaActual = 1
-        /* Llamando a la función getData() */
-        getData(paginaActual)
-
-        /* Escuchar un evento keyup en el campo de entrada y luego llamar a la función getData. */
-        document.getElementById("campo").addEventListener("keyup", function() {
-            getData(1)
-        }, false)
-        document.getElementById("num_registros").addEventListener("change", function() {
-            getData(paginaActual)
-        }, false)
-
-
-        /* Peticion AJAX */
-        function getData(pagina) {
-            let input = document.getElementById("campo").value
-            let num_registros = document.getElementById("num_registros").value
-            let content = document.getElementById("content")
-
-            if (pagina != null) {
-                paginaActual = pagina
-            }
-
-            let url = "load.php"
-            let formaData = new FormData()
-            formaData.append('campo', input)
-            formaData.append('registros', num_registros)
-            formaData.append('pagina', paginaActual)
-
-            fetch(url, {
-                    method: "POST",
-                    body: formaData
-                }).then(response => response.json())
-                .then(data => {
-                    content.innerHTML = data.data
-                    document.getElementById("lbl-total").innerHTML = 'Mostrando ' + data.totalFiltro +
-                        ' de ' + data.totalRegistros + ' registros'
-                    document.getElementById("nav-paginacion").innerHTML = data.paginacion
-                }).catch(err => console.log(err))
-        }
-    </script>
-
-    <!-- Bootstrap core JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+							<td><a href="Listado.php?id=<?php echo $fila['email']; ?>" class="btn btn-primary">Ver</a> </td>
+						
+						</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+			
+		</div>
+	</div>
+	
+	<div class="row">
+				<a href="index.php" class="btn btn-primary">Inicio</a>
+			</div>
+			
 </body>
-
-</html>
+</html>						

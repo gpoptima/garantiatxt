@@ -1,5 +1,5 @@
 <?php
-	require 'config.php';
+	require 'conexion.php';
 	$id = $_REQUEST['id'];
 
 
@@ -7,20 +7,20 @@
 
     /* ----------------------------- --> */
 	$sql = "SELECT * FROM  e4 WHERE email='$id'";
-	$resultado = $conn->query($sql);
+	$resultado = $conexion->query($sql);
 
      /* ----------------------------- --> */
     $sql2 = "SELECT * FROM  f5 WHERE email='$id'";
-	$resultado2 = $conn->query($sql2);
+	$resultado2 = $conexion->query($sql2);
 
     /* ----------------------------- --> */
     $sql3 = "SELECT * FROM  h7 WHERE email='$id'";
-    $resultado3 = $conn->query($sql3);
+    $resultado3 = $conexion->query($sql3);
 
 
     /* ----------------------------- --> */
     $sql4 = "SELECT * FROM  a0 WHERE email='$id'";
-    $resultado4 = $conn->query($sql4);
+    $resultado4 = $conexion->query($sql4);
 	$filaa0  = $resultado4->fetch_assoc();
 //echo $filaa0;
 
